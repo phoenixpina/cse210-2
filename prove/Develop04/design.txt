@@ -1,0 +1,27 @@
+1) Have a menu with 4 options- 3 options are stress relieving activities, 4th is quit
+2) All activities have the same start message
+    2.1) Activities also display unique instructions
+2.2) All activities will have user type in a duration (in seconds) for the activity will last
+3) All activities have an ending message, and they tell the user what activity they completed and how long it took
+4) Program needs to have an "animation" while paused (waiting for user to complete activity)
+5) A1: Breathing activity- 
+    5.1) Displays alternating messages of "Breathe in" and "Breathe out"
+    5.2) Pauses after each displayed message for a set amount of time (to let the user breathe) with a countdown playing
+    5.3) Paused animation is displayed during the time in between messages
+    5.4) User specifies duration that program will last
+6) A2: Reflection activity - 
+    6.0) User specifies duration program will last
+    6.1) Displays a random prompt (from pre made prompts) for user to think about something
+    6.2) Gives a few seconds (with paused animation playing)
+    6.3) Displays a second random prompt (from a different list of pre made prompts) that are all questions to be answered (mentally)
+    6.4) Program pauses again (same format)
+    6.5) Continues displaying questions from second prompt list, pausing in between each questions
+    
+7) A3: Listing activity-  
+    7.1) Timer
+    7.2) Program displays a random prompt (pre made)
+        7.2.1) Prompts are questions that can have things listed as an answered
+    7.3) Program pauses for a few seconds (with animation)
+    7.4) User types in responses until timer expires
+    7.5) Program displays back to the user how many items were typed
+    

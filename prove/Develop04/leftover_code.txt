@@ -1,0 +1,77 @@
+This is any unused code from the program that either didn't work or went unneeded. 
+But who knows? Maybe I'll need it later. Or I'll find out that the program actually needed whatever I dumped here.
+
+   
+
+
+My original Animation logic (it doesn't actually animate, but instead displays the symbols in a line):
+       public static void Animation()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            Console.Write("|");
+            Thread.Sleep(500);
+            Console.Write("-");
+            Thread.Sleep(500);
+            Console.Write("/");
+            Thread.Sleep(500);
+            Console.Write("-");
+            Thread.Sleep(500);
+        }
+        Console.WriteLine();
+    }
+
+
+
+
+
+from the main program:   
+    var breathing = new BreathingActivity();
+    //breathing.Duration = UserTimer("Enter duration (in seconds):");
+    breathing.PerformActivity();
+    breathing.PerformBreathingActivity();
+
+    var reflection = new ReflectionActivity();
+    //reflection.Duration = UserTimer("Enter duration (in seconds):");
+    reflection.PerformActivity();
+
+    var listing = new ListingActivity();
+    //listing.Duration = UserTimer("Enter duration (in seconds):");
+    listing.PerformActivity();
+
+
+
+
+
+
+
+
+Logic for UserTimer: 
+   // private static int UserTimer(string prompt)
+   // {
+   //     Console.Write(prompt);
+   //     string input = Console.ReadLine();
+   //     if (int.TryParse(input, out int duration))
+   //     {
+   //         return duration;
+   //     }
+   //     else
+   //     {
+   //         Console.WriteLine("Invalid input. Using default duration of 20 seconds.");
+    //        return 20; // Default duration
+   //     }
+  //  }
+
+
+
+
+Original concept for BreathingActivity code:
+    //public override void StartActivity()
+    //{
+      //  base.PerformActivity();
+        //for (int i = 0; i < _duration; i++)
+        //{
+          //  DisplayMessageWithAnimation("Breathe in...");
+            //DisplayMessageWithAnimation("Breathe out...");
+        //}
+    //}
