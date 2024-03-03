@@ -15,12 +15,13 @@ class Program
     private static bool Menu()
     {
         Console.Clear();
-        Console.WriteLine("This is a program with 3 quick and easy stress relieving activities.");
+        Console.WriteLine("This is a program with 4 quick and easy stress relieving activities.");
         Console.WriteLine("Type a number to run one of the stress relieving activities:");
         Console.WriteLine("1: Breathing Activity");
         Console.WriteLine("2: Reflection Activity");
         Console.WriteLine("3: Listing Activity");
-        Console.WriteLine("4: Quit");
+        Console.WriteLine("4: Simple Excersize Activity");
+        Console.WriteLine("5: Quit");
         Console.WriteLine("\n Type number here: ");
         string userInput = Console.ReadLine();
 
@@ -52,12 +53,21 @@ class Program
             return true;
 
             case "4":
+            Console.WriteLine("Starting the Simple Excersize Activity:");
+            var excersize = new ExcersizeActivity();
+            excersize.PerformActivity();
+            excersize.PerformExcersizeActivity();
+            Console.ReadLine();
+            return true;
+
+            case "5":
+            Console.Clear();
             Console.WriteLine("Good luck out there!");
             System.Environment.Exit(0); //ends program
             return false;
 
             default:
-            Console.WriteLine("Invalid option. Please only type a number from 1 to 4.");
+            Console.WriteLine("Invalid option. Please only type a number from 1 to 5.");
             Console.ReadLine();
             return true; 
         }

@@ -8,7 +8,6 @@ class BreathingActivity : Activity
         StartMessage();
         Console.WriteLine(@"Instructions: You will be taking deep breaths. 
         There will be 3 second pauses in between breathing in and out.");
-        Thread.Sleep(3000);
         Animation(); 
         Console.WriteLine("We will now begin. Breathe in...");
         Thread.Sleep(3000);
