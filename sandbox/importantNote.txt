@@ -1,0 +1,2 @@
+If you want projects to run in Sandbox, all of the files you want to run must be inside the "Sandbox" folder 
+(with "S" capitalized). Otherwise, you'd need to play with the launch.json file.

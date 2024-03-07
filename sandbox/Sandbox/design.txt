@@ -1,0 +1,9 @@
+SmartDevice:
+    To be inherited
+    can turn on and off using a user command
+        user types "on" or "off" - switch case? Maybe instead just "1" or "2"?
+    Can display to the user if it is on or off
+        option in switch case to display it?
+    Tells you how long it's been on for
+        I really dont have any ideas atm
+    Has a name
