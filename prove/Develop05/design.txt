@@ -1,0 +1,13 @@
+0) Menu with options
+1) Provide goals- let user enter their own goals and save them as a json or something?
+    1.1) Just found out that this is required anyway
+2) User is capable of marking things they completed- let them 
+    set how many points something is worth when they enter their goals?
+3) Provide a checklist goal- bonus points are awarded once all goals are met and user goes above and beyond
+4) User's score can be displayed
+5) Goals can be displayed
+6) User's progress can be saved
+
+
+Classes to inherit from a base class Goals: SimpleGoals, EternalGoals, ChecklistGoals //taken from class discussion
+Serialization is going to be important
