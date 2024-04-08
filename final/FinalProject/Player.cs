@@ -11,21 +11,33 @@ public class Player
     {
         _health = initialHealth;
         _damage = initialDamage;
-        //_level = 1; 
+        //_level = 1; unused concept
     }
 
     public void EquipWeapon(Weapon weapon)
     {
-        _equippedWeapon = weapon;
-        _damage += weapon._attack;
-        Console.WriteLine($"Equipped {weapon._name}. Damage dealt increased by {_equippedWeapon._attack}.");
+        if (_equippedWeapon == null || weapon._attack > _equippedWeapon._attack)
+        {
+            _equippedWeapon = weapon;
+            _damage += weapon._attack;
+            Console.WriteLine($"Equipped {weapon._name}. Damage dealt increased by {_equippedWeapon._attack}.");
+        }
     }
 
     public void EquipArmor(Armor armor)
     {
-        _equippedArmor = armor;
-        _health += armor._defense;
-        Console.WriteLine($"Equipped {armor._name}. Health increased by {_equippedArmor._defense}.");
+        if (_equippedArmor == null || armor._defense > _equippedArmor._defense)
+        {
+            _equippedArmor = armor;
+            _health += armor._defense;
+            Console.WriteLine($"Equipped {armor._name}. Health increased by {_equippedArmor._defense}.");
+        }
+    }
+
+    public void ConsumeFood(Food food)
+    {
+        _health += food._heal;
+        Console.WriteLine($"You ate {food._name}. Health restored by {food._heal} points.");
     }
 
     public void TakeDamage(int damage)

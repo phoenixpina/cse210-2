@@ -7,5 +7,3 @@ public class Armor : Item
     }
 }
 
-//example usage:
-//var powerArmor = new Armor("Power Armor", 100);
