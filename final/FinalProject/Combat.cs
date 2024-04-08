@@ -13,6 +13,21 @@ public class Combat
 
     public void StartCombat()
     {
+   // if (player == null || enemy == null) //for errors
+   // {
+   //     Console.WriteLine("Error: Player or enemy is null.");
+   //     return;
+   // }
+    if (player == null)
+    {
+        Console.WriteLine("Error: Player is null.");
+        return;
+    }
+   // if (enemy == null)
+   // {
+   //     Console.WriteLine("Error: Enemy is null.");
+   //     return;
+   // }
         Console.WriteLine($"You encounter a {enemy._name}!");
 
         while (player._health > 0 && enemy._health > 0)

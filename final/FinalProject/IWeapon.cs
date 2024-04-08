@@ -1,7 +1,7 @@
-public class Weapon : Inventory
+public class Weapon : Item
 {
     public int _attack;
-    public Weapon(string Name, int Attack) : base(Name)
+    public Weapon(string Name, string Description, int Attack) : base(Name, Description)
     {
         _attack = Attack;
     }

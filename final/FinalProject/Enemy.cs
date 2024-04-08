@@ -7,7 +7,7 @@ public class Enemy
     public int _health;
     public int _damage;
     public Rarity _enemyRarity;
-    public enum Rarity //forced naming convention- must be uppercase
+    public enum Rarity
     {
         Common,
         Uncommon,
@@ -30,6 +30,24 @@ public class Enemy
             Console.WriteLine($"{_name} has been defeated!");
         }
    }
+
+    public void DropItem(Player player)
+    {
+        double randomValue = new Random().NextDouble();
+        switch(_enemyRarity)
+        {
+            case Rarity.Common:
+            if (randomValue <= 0.3)
+            {
+                player.AddItem(new Armor("Common Armor", "Leather Armor", 10));
+            }
+            else if (randomValue <= 0.6)
+            {
+                player.AddItem(new Weapon("Common Weapon", "10mm Pistol", 10));
+            }
+            break;
+        }
+    }
 }
    
    

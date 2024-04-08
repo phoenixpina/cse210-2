@@ -9,12 +9,15 @@ public class Game
     private readonly string saveFilePath = "player_data.json";
     public Game()
     {
+        //Player player = CreateNewPlayer();
+        //LoadPlayerData();
+        //SaveAndLoad = new SaveLoad();
         player = LoadPlayerData() ?? CreateNewPlayer();
-        SaveAndLoad = new SaveLoad();
     }
 
     public void Start()
     {
+        //Player player = CreateNewPlayer();
         Console.WriteLine("Welcome to New Alamogordo.");
         DisplayMainMenu();
     }
@@ -77,10 +80,8 @@ public class Game
         Enemy[] possibleEnemies = { new SuperMutant(), new FeralGhoul(), new Raider() };
         Random random = new Random();
         int randomIndex = random.Next(possibleEnemies.Length);
-
         Enemy randomEnemy = possibleEnemies[randomIndex];
-        Console.WriteLine($"You encounter a {randomEnemy._name}!");
-        Console.WriteLine($"You encounter a {randomEnemy._name}!");
+        //Console.WriteLine($"You encounter a {randomEnemy._name}!");
         Combat combat = new Combat(player, randomEnemy);
         combat.StartCombat();
     }
@@ -97,16 +98,12 @@ public class Game
 
     private Player LoadPlayerData()
     {
-        player = SaveAndLoad.Load();
-        if (player == null) //if there is no save data
-        {
-            player = CreateNewPlayer();
-        }
         try
         {
             if (File.Exists(saveFilePath))
             {
                 string json = File.ReadAllText(saveFilePath);
+                //player = JsonSerializer.Deserialize<Player>(json);
                 return JsonSerializer.Deserialize<Player>(json);
             }
             else
