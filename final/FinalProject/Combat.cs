@@ -19,30 +19,36 @@ public class Combat
         while (player._health > 0 && enemy._health > 0)
         {
             DisplayCombatOptions();
-            int choice = GetUserChoice(1, 3);
+            int choice = GetUserChoice(1, 2);
 
             switch (choice)
             {
                 case 1:
+                    EnemyAttack();
                     AttackEnemy();
                     break;
                 //case 2:
-                    // You still need to code this
                //     Console.WriteLine("You use a healing item.");
                 //    break;
                 case 2:
                     Console.WriteLine("You retreat to survive another day.");
+                    Console.WriteLine("");
                     return; 
             }
-
-            EnemyAttack();
         }
 
         if (player._health <= 0)
-            Console.WriteLine("You were killed. May someone find your tags for remembrance. Press 4 to quit.");
-        else
-            Console.WriteLine($"You defeated the {enemy._name}!");
+        {
+            Console.WriteLine("You were killed. May someone find your tags for remembrance.");
             Console.WriteLine("");
+            Environment.Exit(0);
+        }
+        else
+        {
+            Console.WriteLine($"You killed the {enemy._name}!");
+            enemy.DropItem(player);
+            Console.WriteLine("");
+        }
     }
 
     private void DisplayCombatOptions()
@@ -83,8 +89,8 @@ public class Combat
     {
         int damageTaken = enemy._damage;
         player.TakeDamage(damageTaken);
+        Console.WriteLine("");
         Console.WriteLine($"The {enemy._name} attacks! You take {damageTaken} damage.");
         Console.WriteLine($"Your remaining health: {player._health}");
-        Console.WriteLine("");
     }
 }

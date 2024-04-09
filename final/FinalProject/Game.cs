@@ -7,7 +7,7 @@ public class Game
     private Player player;
     private SaveLoad SaveAndLoad;
     private readonly string saveFilePath = "player_data.json";
-    //private int enemiesDefeated = 0;
+    private int _enemiesDefeated = 0;
     public Game()
     {
         //Player player = CreateNewPlayer();
@@ -32,7 +32,7 @@ public class Game
 
     private void DisplayMainMenu()
     {
-        int enemiesDefeated = 0;
+        //int _enemiesDefeated = 0;
         do
         {
             Console.WriteLine("1. Fight a random enemy");
@@ -51,7 +51,7 @@ public class Game
                     SavePlayerData();
                     break;
                 case 3:
-                    if (enemiesDefeated >= 10)
+                    if (_enemiesDefeated >= 10)
                     {
                         Console.Clear();
                         Console.WriteLine("You've made it back to the base airship. Well done.");
@@ -59,6 +59,7 @@ public class Game
                         Console.WriteLine("There may be a promotion to Knight in it for you.");
                         Console.WriteLine("But as for now, it's time to return to the chapter base.");
                         Console.WriteLine("Ad Victoriam.");
+                        Console.WriteLine("");
                         Environment.Exit(0);
                     }
                     else
@@ -103,12 +104,16 @@ public class Game
 
     private void FightRandomEnemy()
     {
-        Enemy[] possibleEnemies = { new SuperMutant(), new FeralGhoul(), new Raider() };
+        Enemy[] possibleEnemies = { new SuperMutant(), new FeralGhoul(), new Raider(), 
+        new SuperMutantBrute(), new WitheredFeralGhoul(), new RaiderPsycho(),
+        new SuperMutantMaster(), new GlowingOne(), new RaiderVeteran(), new Behemoth()};
+
         Random random = new Random();
         int randomIndex = random.Next(possibleEnemies.Length);
         Enemy randomEnemy = possibleEnemies[randomIndex];
         Combat combat = new Combat(player, randomEnemy);
         combat.StartCombat();
+        _enemiesDefeated ++;
     }
 
     //private void ContinueToNextArea()
